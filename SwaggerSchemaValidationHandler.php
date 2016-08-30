@@ -97,7 +97,9 @@ class SwaggerSchemaValidationHandler
                             $responseString = $this->psr7ResponsePrinter->toString($response);
 
                             throw new \Exception(
-                                "{$e->getMessage()}\n\n$requestString\n\n\n$responseString\n", $e->getCode(), $e
+                                "{$e->getMessage()}\n\n$requestString\n\n\n$responseString\n",
+                                $e->getCode(),
+                                $e
                             );
                         }
                     }

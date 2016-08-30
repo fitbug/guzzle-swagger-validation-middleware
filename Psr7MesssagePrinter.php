@@ -3,7 +3,6 @@
 
 namespace Fitbug\BackOfficeApi\Features\Support\Guzzle;
 
-
 use Psr\Http\Message\MessageInterface;
 
 abstract class Psr7MesssagePrinter
@@ -13,7 +12,7 @@ abstract class Psr7MesssagePrinter
         $string = "";
 
         foreach ($message->getHeaders() as $name => $values) {
-            foreach($values as $value) {
+            foreach ($values as $value) {
                 $string .= $name . ": " . $value . "\n";
             }
         }

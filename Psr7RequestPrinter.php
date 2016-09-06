@@ -1,13 +1,11 @@
 <?php
 
-
 namespace Fitbug\BackOfficeApi\Features\Support\Guzzle;
 
 use Psr\Http\Message\RequestInterface;
 
 class Psr7RequestPrinter extends Psr7MesssagePrinter implements Psr7RequestPrinterInterface
 {
-
     public function toString(RequestInterface $request)
     {
         $string = sprintf(

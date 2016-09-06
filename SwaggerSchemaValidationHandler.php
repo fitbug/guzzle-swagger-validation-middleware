@@ -8,9 +8,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class SwaggerSchemaValidationHandler
- *
- * @package Fitbug\BackOfficeApi\Features\Support\Guzzle
+ * Class SwaggerSchemaValidationHandler.
  */
 class SwaggerSchemaValidationHandler
 {
@@ -93,7 +91,7 @@ class SwaggerSchemaValidationHandler
                         try {
                             $this->assertResponseAndRequestMatch($response, $request, $schemaManager);
                         } catch (\Exception $e) {
-                            $requestString  = $this->psr7RequestPrinter->toString($request);
+                            $requestString = $this->psr7RequestPrinter->toString($request);
                             $responseString = $this->psr7ResponsePrinter->toString($response);
 
                             throw new \Exception(

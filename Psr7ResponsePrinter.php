@@ -8,7 +8,6 @@ class Psr7ResponsePrinter extends Psr7MesssagePrinter implements Psr7ResponsePri
 {
     public function toString(ResponseInterface $response)
     {
-
         $string = sprintf(
             "HTTP/%s %s %s\n",
             $response->getProtocolVersion(),

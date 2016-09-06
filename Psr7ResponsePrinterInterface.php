@@ -1,4 +1,5 @@
 <?php
+
 namespace Fitbug\BackOfficeApi\Features\Support\Guzzle;
 
 use Psr\Http\Message\ResponseInterface;

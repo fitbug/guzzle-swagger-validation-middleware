@@ -1,5 +1,9 @@
 # Guzzle Middleware: Swagger Validation Middleware
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fitbug/guzzle-swagger-validation-middleware/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fitbug/guzzle-swagger-validation-middleware/?branch=master)
+[![Build Status](https://travis-ci.org/fitbug/guzzle-swagger-validation-middleware.svg?branch=master)](https://travis-ci.org/fitbug/guzzle-swagger-validation-middleware)
+[![StyleCI Status](https://styleci.io/repos/70977859/shield)](https://styleci.io/repos/70977859)
+
 A guzzle middleware that can be used to validate if requests and 
 responses match what is defined in the schema
 

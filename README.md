@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/fitbug/guzzle-swagger-validation-middleware.svg?branch=master)](https://travis-ci.org/fitbug/guzzle-swagger-validation-middleware)
 [![StyleCI Status](https://styleci.io/repos/70977859/shield)](https://styleci.io/repos/70977859)
 [![Latest Stable Version](https://poser.pugx.org/fitbug/guzzle-swagger-validation-middleware/v/stable)](https://packagist.org/packages/fitbug/guzzle-swagger-validation-middleware)
+[![Coverage Status](https://coveralls.io/repos/github/fitbug/guzzle-swagger-validation-middleware/badge.svg?branch=master)](https://coveralls.io/github/fitbug/guzzle-swagger-validation-middleware?branch=master)
 
 A guzzle middleware that can be used to validate if requests and 
 responses match what is defined in the schema

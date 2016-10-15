@@ -16,7 +16,9 @@
   "require-dev": {
     "phpspec/phpspec": "^3.1",
     "friendsofphp/php-cs-fixer": "^2.0.0",
-    "sllh/php-cs-fixer-styleci-bridge": "^2.1"
+    "sllh/php-cs-fixer-styleci-bridge": "^2.1",
+    "henrikbjorn/phpspec-code-coverage": "^3.0",
+    "satooshi/php-coveralls": "dev-master"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

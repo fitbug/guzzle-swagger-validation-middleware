@@ -4,3 +4,6 @@
 .DS_Store
 /.idea
 /.php_cs.cache
+/coverage
+coverage.xml
+coveralls-upload.json

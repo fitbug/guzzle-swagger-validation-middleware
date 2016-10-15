@@ -43,7 +43,6 @@ Accepts: application/json
 {"this is my body": true}
 EXPECTED;
 
-
         $this->toString($request)->shouldReturn($response);
     }
 }

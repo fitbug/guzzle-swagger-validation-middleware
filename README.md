@@ -134,7 +134,7 @@ composer install
 We follow PSR2, and also enforce PHPDocs on all functions. To run the tests for coding style violations
 
 ```bash
-vendor/bin/phpcs -p --standard=psr2 src/
+vendor/bin/php-cs-fixer fix -v
 ```
 
 ### Unit tests

@@ -49,7 +49,6 @@ class Psr7ResponsePrinterSpec extends ObjectBehavior
 </html>'
         );
 
-
         $expected
             = <<<'EXPECTED'
 HTTP/1.1 200 OK

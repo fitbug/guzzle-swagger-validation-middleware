@@ -56,7 +56,6 @@ class SwaggerSchemaValidationHandler
         }
         $this->psr7RequestPrinter = $psr7RequestPrinter;
 
-
         if (!$psr7ResponsePrinter) {
             $psr7ResponsePrinter = new Psr7ResponsePrinter();
         }

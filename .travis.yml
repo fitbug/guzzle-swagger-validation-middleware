@@ -31,7 +31,7 @@ matrix:
 before_install:
   - if [ "$XDEBUG_OFF" == "true" ] ; then phpenv config-rm xdebug.ini || true ; fi
 install:
-  - if [ ! -f "${HOME}/.ocularcache/ocular.phar" ] ; then wget https://scrutinizer-ci.com/ocular.phar -o ${HOME}/.ocularcache/ocular.phar ; else php ${HOME}/.ocularcache/ocular.phar self-update ; fi
+  - if [ ! -f "${HOME}/.ocularcache/ocular.phar" ] ; then wget https://scrutinizer-ci.com/ocular.phar -O ${HOME}/.ocularcache/ocular.phar ; else php ${HOME}/.ocularcache/ocular.phar self-update ; fi
   - "composer install --no-interaction"
   - "composer update $COMPOSER_FLAGS --no-interaction"
 

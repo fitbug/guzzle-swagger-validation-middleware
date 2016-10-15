@@ -90,6 +90,9 @@ coding_style:
             constants:
                 true_false_null: lower
 
+tools:
+    external_code_coverage: true
+
 build_failure_conditions:
     - 'elements.rating(<= D).exists'
     - 'issues.new.exists'

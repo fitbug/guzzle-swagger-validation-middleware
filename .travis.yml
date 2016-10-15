@@ -3,6 +3,7 @@ language: php
 cache:
   directories:
     - "${HOME}/.composer/cache"
+    - "${HOME}/.ocularcache"
 
 matrix:
   fast_finish: false
@@ -30,6 +31,7 @@ matrix:
 before_install:
   - if [ "$XDEBUG_OFF" == "true" ] ; then phpenv config-rm xdebug.ini || true ; fi
 install:
+  - if [ ! -f "${HOME}/.ocularcache/ocular.phar" ] ; then wget https://scrutinizer-ci.com/ocular.phar -o ${HOME}/.ocularcache/ocular.phar ; else php ${HOME}/.ocularcache/ocular.phar self-update ; fi
   - "composer install --no-interaction"
   - "composer update $COMPOSER_FLAGS --no-interaction"
 
@@ -41,3 +43,4 @@ script:
 
 after_success:
   - "travis_retry php vendor/bin/coveralls"
+  - php ${HOME}/.ocularcache/ocular.phar code-coverage:upload --repository=g/fitbug/guzzle-swagger-validation-middleware --access-token="${SC_KEY}" --format=php-clover coverage.xml

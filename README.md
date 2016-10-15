@@ -28,6 +28,11 @@ composer require fitbug/guzzle-swagger-validation-middleware
 Simply add it to the guzzle you use as middleware.
 
 ```php
+use Fitbug\Guzzle\SwaggerValidation\SwaggerSchemaValidationHandler;
+use GuzzleHttp\HandlerStack;
+use Http\Adapter\Guzzle6\Client as GuzzleClientFactory;
+use Http\Message\MessageFactory\GuzzleMessageFactory;
+
 $this->messageFactory = new GuzzleMessageFactory();
 $swaggerFile = 'file://';
 $swaggerFile .= '/path/to/your/swagger.json';

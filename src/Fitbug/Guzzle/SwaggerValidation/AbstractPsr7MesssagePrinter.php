@@ -1,11 +1,21 @@
 <?php
 
-namespace Fitbug\BackOfficeApi\Features\Support\Guzzle;
+namespace Fitbug\Guzzle\SwaggerValidation;
 
 use Psr\Http\Message\MessageInterface;
 
-abstract class Psr7MesssagePrinter
+/**
+ * Print a request or response PSR7 Message.
+ */
+abstract class AbstractPsr7MesssagePrinter
 {
+    /**
+     * Generate the headers and body part of the message.
+     *
+     * @param MessageInterface $message
+     *
+     * @return string
+     */
     protected function headersAndBody(MessageInterface $message)
     {
         $string = '';

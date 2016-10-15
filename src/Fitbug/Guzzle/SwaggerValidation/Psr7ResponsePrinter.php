@@ -1,11 +1,21 @@
 <?php
 
-namespace Fitbug\BackOfficeApi\Features\Support\Guzzle;
+namespace Fitbug\Guzzle\SwaggerValidation;
 
 use Psr\Http\Message\ResponseInterface;
 
-class Psr7ResponsePrinter extends Psr7MesssagePrinter implements Psr7ResponsePrinterInterface
+/**
+ * Builds a string from a PSR7 Response.
+ */
+class Psr7ResponsePrinter extends AbstractPsr7MesssagePrinter implements Psr7ResponsePrinterInterface
 {
+    /**
+     * Generate a pretty PS7 response.
+     *
+     * @param ResponseInterface $response
+     *
+     * @return string
+     */
     public function toString(ResponseInterface $response)
     {
         $string = sprintf(

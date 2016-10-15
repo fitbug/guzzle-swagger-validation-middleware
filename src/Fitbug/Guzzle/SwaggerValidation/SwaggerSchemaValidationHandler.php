@@ -1,6 +1,6 @@
 <?php
 
-namespace Fitbug\BackOfficeApi\Features\Support\Guzzle;
+namespace Fitbug\Guzzle\SwaggerValidation;
 
 use FR3D\SwaggerAssertions\PhpUnit\Psr7AssertsTrait;
 use FR3D\SwaggerAssertions\SchemaManager;
@@ -8,7 +8,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class SwaggerSchemaValidationHandler.
+ * Middleware that wraps around the PSR7 Assertion handler to make it work for guzzle.
  */
 class SwaggerSchemaValidationHandler
 {
@@ -19,6 +19,9 @@ class SwaggerSchemaValidationHandler
      */
     private $schemaManager;
 
+    /**
+     * @var bool
+     */
     private $skip;
     /**
      * @var Psr7RequestPrinterInterface
@@ -37,9 +40,9 @@ class SwaggerSchemaValidationHandler
     /**
      * SwaggerSchemaValidationHandler constructor.
      *
-     * @param string                       $uri
-     * @param Psr7RequestPrinterInterface  $psr7RequestPrinter
-     * @param Psr7ResponsePrinterInterface $psr7ResponsePrinter
+     * @param string                            $uri
+     * @param Psr7RequestPrinterInterface|null  $psr7RequestPrinter
+     * @param Psr7ResponsePrinterInterface|null $psr7ResponsePrinter
      */
     public function __construct(
         $uri,
@@ -61,17 +64,21 @@ class SwaggerSchemaValidationHandler
     }
 
     /**
+     * Disable (or enable) the middleware's testing temporarily.
+     *
      * @param bool $skip
      */
-    public function setSkip(bool $skip)
+    public function setSkip($skip)
     {
         $this->skip = $skip;
     }
 
     /**
+     * Guzzle Middleware.
+     *
      * @param callable $handler
      *
-     * @return callable
+     * @return \Closure
      */
     public function __invoke(callable $handler)
     {
